@@ -1,0 +1,6 @@
+<h2>{{#if categoria}}Editar categoria{{else}}Cadastrar categoria{{/if}}</h2>
+<form action="{{formAction}}" method="post">
+    <p><label>Nome: <input type="text" name="nome" value="{{categoria.nome}}" required></label></p>
+    <p><label>Descrição: <textarea name="descricao">{{categoria.descricao}}</textarea></label></p>
+    <p><button type="submit">Salvar</button> <a href="/categorias">Cancelar</a></p>
+</form>

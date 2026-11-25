@@ -1,0 +1,21 @@
+<h2>Profissionais</h2>
+<p><a href="/profissionais/novo">Cadastrar profissional</a></p>
+{{#if profissionais.length}}
+    <table>
+        <thead>
+            <tr><th>Nome</th><th>Especialidade</th><th>Telefone</th><th>Ações</th></tr>
+        </thead>
+        <tbody>
+            {{#each profissionais}}
+                <tr>
+                    <td>{{nome}}</td>
+                    <td>{{especialidade}}</td>
+                    <td>{{telefone}}</td>
+                    <td><a href="/profissionais/{{id}}">Detalhes</a> | <a href="/profissionais/{{id}}/editar">Editar</a></td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>Nenhum profissional cadastrado.</p>
+{{/if}}

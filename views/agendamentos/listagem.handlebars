@@ -1,0 +1,22 @@
+<h2>Agendamentos</h2>
+<p><a href="/agendamentos/novo">Cadastrar agendamento</a> | <a href="/agendamentos/agenda">Agenda do dia</a></p>
+{{#if agendamentos.length}}
+    <table>
+        <thead>
+            <tr><th>Data e hora</th><th>Cliente</th><th>Profissional</th><th>Serviço</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+            {{#each agendamentos}}
+                <tr>
+                    <td>{{dataHora}}</td>
+                    <td>{{Cliente.nome}}</td>
+                    <td>{{Profissional.nome}}</td>
+                    <td>{{Servico.nome}}</td>
+                    <td>{{status}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>Nenhum agendamento cadastrado.</p>
+{{/if}}

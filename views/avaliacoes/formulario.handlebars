@@ -1,0 +1,16 @@
+<h2>{{#if avaliacao}}Editar avaliação{{else}}Cadastrar avaliação{{/if}}</h2>
+<form action="{{formAction}}" method="post">
+    <p>
+        <label>Agendamento:
+            <select name="agendamentoId" required>
+                <option value="">Selecione</option>
+                {{#each agendamentos}}
+                    <option value="{{id}}">#{{id}} - {{dataHora}}</option>
+                {{/each}}
+            </select>
+        </label>
+    </p>
+    <p><label>Nota (1 a 5): <input type="number" name="nota" min="1" max="5" value="{{avaliacao.nota}}" required></label></p>
+    <p><label>Comentário: <textarea name="comentario">{{avaliacao.comentario}}</textarea></label></p>
+    <p><button type="submit">Salvar</button> <a href="/avaliacoes">Cancelar</a></p>
+</form>

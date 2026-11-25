@@ -1,0 +1,18 @@
+<h2>{{#if servico}}Editar serviço{{else}}Cadastrar serviço{{/if}}</h2>
+<form action="{{formAction}}" method="post">
+    <p><label>Nome: <input type="text" name="nome" value="{{servico.nome}}" required></label></p>
+    <p><label>Descrição: <textarea name="descricao">{{servico.descricao}}</textarea></label></p>
+    <p><label>Preço: <input type="number" name="preco" min="0" step="0.01" value="{{servico.preco}}" required></label></p>
+    <p><label>Duração em minutos: <input type="number" name="duracaoMinutos" min="1" value="{{servico.duracaoMinutos}}" required></label></p>
+    <p>
+        <label>Categoria:
+            <select name="categoriaId" required>
+                <option value="">Selecione</option>
+                {{#each categorias}}
+                    <option value="{{id}}">{{nome}}</option>
+                {{/each}}
+            </select>
+        </label>
+    </p>
+    <p><button type="submit">Salvar</button> <a href="/servicos">Cancelar</a></p>
+</form>

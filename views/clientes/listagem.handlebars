@@ -1,0 +1,21 @@
+<h2>Clientes</h2>
+<p><a href="/clientes/novo">Cadastrar cliente</a></p>
+{{#if clientes.length}}
+    <table>
+        <thead>
+            <tr><th>Nome</th><th>Telefone</th><th>E-mail</th><th>Ações</th></tr>
+        </thead>
+        <tbody>
+            {{#each clientes}}
+                <tr>
+                    <td>{{nome}}</td>
+                    <td>{{telefone}}</td>
+                    <td>{{email}}</td>
+                    <td><a href="/clientes/{{id}}">Detalhes</a> | <a href="/clientes/{{id}}/editar">Editar</a></td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>Nenhum cliente cadastrado.</p>
+{{/if}}

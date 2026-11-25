@@ -1,0 +1,22 @@
+<h2>Pagamentos</h2>
+<p><a href="/pagamentos/novo">Cadastrar pagamento</a></p>
+{{#if pagamentos.length}}
+    <table>
+        <thead>
+            <tr><th>Agendamento</th><th>Valor</th><th>Método</th><th>Status</th><th>Data do pagamento</th></tr>
+        </thead>
+        <tbody>
+            {{#each pagamentos}}
+                <tr>
+                    <td>{{agendamentoId}}</td>
+                    <td>{{valor}}</td>
+                    <td>{{metodo}}</td>
+                    <td>{{status}}</td>
+                    <td>{{dataPagamento}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>Nenhum pagamento cadastrado.</p>
+{{/if}}

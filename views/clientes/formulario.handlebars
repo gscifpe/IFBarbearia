@@ -1,0 +1,9 @@
+<h2>{{#if cliente}}Editar cliente{{else}}Cadastrar cliente{{/if}}</h2>
+<form action="{{formAction}}" method="post">
+    <p><label>Nome: <input type="text" name="nome" value="{{cliente.nome}}" required></label></p>
+    <p><label>E-mail: <input type="email" name="email" value="{{cliente.email}}"></label></p>
+    <p><label>Telefone: <input type="tel" name="telefone" value="{{cliente.telefone}}" required></label></p>
+    <p><label>CPF: <input type="text" name="cpf" value="{{cliente.cpf}}"></label></p>
+    <p><label>Data de nascimento: <input type="date" name="dataNascimento" value="{{cliente.dataNascimento}}"></label></p>
+    <p><button type="submit">Salvar</button> <a href="/clientes">Cancelar</a></p>
+</form>

@@ -1,0 +1,22 @@
+<h2>Agenda do dia</h2>
+<p><a href="/agendamentos">Ver todos os agendamentos</a></p>
+{{#if agendamentos.length}}
+    <table>
+        <thead>
+            <tr><th>Horário</th><th>Cliente</th><th>Profissional</th><th>Serviço</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+            {{#each agendamentos}}
+                <tr>
+                    <td>{{dataHora}}</td>
+                    <td>{{Cliente.nome}}</td>
+                    <td>{{Profissional.nome}}</td>
+                    <td>{{Servico.nome}}</td>
+                    <td>{{status}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>Não há agendamentos para este dia.</p>
+{{/if}}

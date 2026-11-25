@@ -1,0 +1,14 @@
+<h2>Categorias</h2>
+<p><a href="/categorias/novo">Cadastrar categoria</a></p>
+{{#if categorias.length}}
+    <table>
+        <thead><tr><th>Nome</th><th>Descrição</th></tr></thead>
+        <tbody>
+            {{#each categorias}}
+                <tr><td>{{nome}}</td><td>{{descricao}}</td></tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>Nenhuma categoria cadastrada.</p>
+{{/if}}

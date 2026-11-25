@@ -1,0 +1,47 @@
+<h2>{{#if agendamento}}Editar agendamento{{else}}Cadastrar agendamento{{/if}}</h2>
+<form action="{{formAction}}" method="post">
+    <p><label>Data e hora: <input type="datetime-local" name="dataHora" value="{{agendamento.dataHora}}" required></label></p>
+    <p>
+        <label>Cliente:
+            <select name="clienteId" required>
+                <option value="">Selecione</option>
+                {{#each clientes}}
+                    <option value="{{id}}">{{nome}}</option>
+                {{/each}}
+            </select>
+        </label>
+    </p>
+    <p>
+        <label>Profissional:
+            <select name="profissionalId" required>
+                <option value="">Selecione</option>
+                {{#each profissionais}}
+                    <option value="{{id}}">{{nome}}</option>
+                {{/each}}
+            </select>
+        </label>
+    </p>
+    <p>
+        <label>Serviço:
+            <select name="servicoId" required>
+                <option value="">Selecione</option>
+                {{#each servicos}}
+                    <option value="{{id}}">{{nome}} - {{preco}}</option>
+                {{/each}}
+            </select>
+        </label>
+    </p>
+    <p>
+        <label>Status:
+            <select name="status">
+                <option value="agendado">Agendado</option>
+                <option value="confirmado">Confirmado</option>
+                <option value="concluido">Concluído</option>
+                <option value="cancelado">Cancelado</option>
+                <option value="faltou">Faltou</option>
+            </select>
+        </label>
+    </p>
+    <p><label>Observações: <textarea name="observacoes">{{agendamento.observacoes}}</textarea></label></p>
+    <p><button type="submit">Salvar</button> <a href="/agendamentos">Cancelar</a></p>
+</form>

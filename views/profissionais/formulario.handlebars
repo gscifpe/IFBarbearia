@@ -1,0 +1,8 @@
+<h2>{{#if profissional}}Editar profissional{{else}}Cadastrar profissional{{/if}}</h2>
+<form action="{{formAction}}" method="post">
+    <p><label>Nome: <input type="text" name="nome" value="{{profissional.nome}}" required></label></p>
+    <p><label>E-mail: <input type="email" name="email" value="{{profissional.email}}"></label></p>
+    <p><label>Telefone: <input type="tel" name="telefone" value="{{profissional.telefone}}" required></label></p>
+    <p><label>Especialidade: <input type="text" name="especialidade" value="{{profissional.especialidade}}"></label></p>
+    <p><button type="submit">Salvar</button> <a href="/profissionais">Cancelar</a></p>
+</form>

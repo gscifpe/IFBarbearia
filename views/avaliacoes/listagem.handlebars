@@ -1,0 +1,14 @@
+<h2>Avaliações</h2>
+<p><a href="/avaliacoes/novo">Cadastrar avaliação</a></p>
+{{#if avaliacoes.length}}
+    <table>
+        <thead><tr><th>Agendamento</th><th>Nota</th><th>Comentário</th></tr></thead>
+        <tbody>
+            {{#each avaliacoes}}
+                <tr><td>{{agendamentoId}}</td><td>{{nota}}</td><td>{{comentario}}</td></tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>Nenhuma avaliação cadastrada.</p>
+{{/if}}

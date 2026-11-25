@@ -1,0 +1,37 @@
+<h2>{{#if pagamento}}Editar pagamento{{else}}Cadastrar pagamento{{/if}}</h2>
+<form action="{{formAction}}" method="post">
+    <p>
+        <label>Agendamento:
+            <select name="agendamentoId" required>
+                <option value="">Selecione</option>
+                {{#each agendamentos}}
+                    <option value="{{id}}">#{{id}} - {{dataHora}}</option>
+                {{/each}}
+            </select>
+        </label>
+    </p>
+    <p><label>Valor: <input type="number" name="valor" min="0" step="0.01" value="{{pagamento.valor}}" required></label></p>
+    <p>
+        <label>Método:
+            <select name="metodo" required>
+                <option value="dinheiro">Dinheiro</option>
+                <option value="pix">Pix</option>
+                <option value="cartao_credito">Cartão de crédito</option>
+                <option value="cartao_debito">Cartão de débito</option>
+            </select>
+        </label>
+    </p>
+    <p>
+        <label>Status:
+            <select name="status">
+                <option value="pendente">Pendente</option>
+                <option value="pago">Pago</option>
+                <option value="cancelado">Cancelado</option>
+                <option value="estornado">Estornado</option>
+            </select>
+        </label>
+    </p>
+    <p><label>Data do pagamento: <input type="datetime-local" name="dataPagamento" value="{{pagamento.dataPagamento}}"></label></p>
+    <p><label>Referência: <input type="text" name="referencia" value="{{pagamento.referencia}}"></label></p>
+    <p><button type="submit">Salvar</button> <a href="/pagamentos">Cancelar</a></p>
+</form>
